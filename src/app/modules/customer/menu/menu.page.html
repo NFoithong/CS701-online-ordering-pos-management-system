@@ -1,13 +1,24 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>menu</ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Menu</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-list *ngIf="items.length > 0">
+    <ion-item *ngFor="let item of items">
+      <ion-thumbnail slot="start">
+        <img [src]="item.imageUrl" alt="{{ item.name }}"/>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.description | slice: 0:100 }}...</p>
+        <strong>${{ item.price }}</strong>
+      </ion-label>
+      <ion-button slot="end" (click)="addToCart(item)" color="success">
+        Add
+      </ion-button>
+    </ion-item>
+    
+  </ion-list>
 </ion-content>

@@ -4,18 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MenuPageRoutingModule } from './menu-routing.module';
+import { CartPageRoutingModule } from './cart-routing.module';
 
-import { MenuPage } from './menu.page';
+import { CartPage } from './cart.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MenuPageRoutingModule,
-    MenuPage
+    CartPageRoutingModule
   ],
-  // declarations: [MenuPage]
+  declarations: [CartPage]
 })
-export class MenuPageModule {}
+export class CartPageModule {}

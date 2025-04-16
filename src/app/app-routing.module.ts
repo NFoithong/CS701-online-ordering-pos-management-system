@@ -9,7 +9,11 @@ const routes: Routes = [
   {
     path: 'menu',
     loadChildren: () => import('./modules/customer/menu/menu.module').then( m => m.MenuPageModule)
+  },  {
+    path: 'cart',
+    loadChildren: () => import('./modules/customer/cart/cart.module').then( m => m.CartPageModule)
   }
+
 ];
 @NgModule({
   imports: [
